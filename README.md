@@ -6,8 +6,5 @@ The project uses 3 switches as inputs and a 10 LED array as output. Depending on
 Switch 1 and 2:
   - Toggle between 1Hz, 10Hz, 50Hz, and 100Hz
 
-
  Switch 3:
   - Enable (turn LEDs on/off)
-  
-  
