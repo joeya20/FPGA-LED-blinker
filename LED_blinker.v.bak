@@ -1,0 +1,9 @@
+module LED_blinker 
+	(
+		i_clk,
+		i_enable,
+		i_select0,
+		i_select1,
+		o_LED_pwr
+		);
+	

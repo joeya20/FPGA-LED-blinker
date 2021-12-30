@@ -1,0 +1,10 @@
+module top_level 
+	(
+		MAX10_CLK1_50,
+		SW,
+		LEDR
+	);
+	
+LED_blinker blinker_ins0
+	
+	
