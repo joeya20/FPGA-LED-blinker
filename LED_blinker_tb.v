@@ -55,7 +55,7 @@ module LED_blinker_tb;
 		#(c_CLK_PERIOD*10);
 		
 		//finish simulation
-		#5 $finish;
+		$finish;
 	end
 	
 endmodule
