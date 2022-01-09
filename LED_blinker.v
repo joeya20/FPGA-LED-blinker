@@ -27,14 +27,13 @@ module LED_blinker
 	
 	always @ (posedge i_clk)
 	begin		
-		//increment counter; toggle LED and roll over if max count is reached
-		if(r_count >= r_current_max_count-1)	//need >= condition for case where freq is toggled down
-		begin
+		//increment counter and toggle LED and roll over if max count is reached
+		if(r_count < r_current_max_count-1) begin
+			r_count <= r_count + 1;
+		end else begin
 			r_toggle <= !r_toggle;
 			r_count <= 0;
 		end
-		else
-			r_count <= r_count + 1;
 	end
 	
 	assign r_current_max_count = i_select1 ? (i_select0 ? c_max_count_20Hz : c_max_count_10Hz) : (i_select0 ? c_max_count_5Hz : c_max_count_1Hz);

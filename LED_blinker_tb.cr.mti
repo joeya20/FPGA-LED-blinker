@@ -1,8 +1,8 @@
-C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/LED_blinker.v {1 {vlog -work work -stats=none C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/LED_blinker.v
+C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/LED_blinker_tb.v {1 {vlog -work work -stats=none C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/LED_blinker_tb.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module LED_blinker
+-- Compiling module LED_blinker_tb
 
 Top level modules:
-	LED_blinker
+	LED_blinker_tb
 
 } {} {}}
