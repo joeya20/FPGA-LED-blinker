@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LED_blinker
-Wed Dec 29 22:18:18 2021
+Sat Jan  8 00:37:51 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -13,12 +13,11 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: LED_blinker:blinker_ins0
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: LED_blinker:blinker_ins0
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -45,15 +44,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Dec 29 22:18:18 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sat Jan  8 00:37:51 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; LED_blinker                                 ;
 ; Top-level Entity Name              ; top_level                                   ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 205                                         ;
-;     Total combinational functions  ; 205                                         ;
-;     Dedicated logic registers      ; 118                                         ;
-; Total registers                    ; 118                                         ;
+; Total logic elements               ; 100                                         ;
+;     Total combinational functions  ; 100                                         ;
+;     Dedicated logic registers      ; 33                                          ;
+; Total registers                    ; 33                                          ;
 ; Total pins                         ; 21                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -177,36 +176,36 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                       ;
-+---------------------------------------------+---------------------+
-; Resource                                    ; Usage               ;
-+---------------------------------------------+---------------------+
-; Estimated Total logic elements              ; 205                 ;
-;                                             ;                     ;
-; Total combinational functions               ; 205                 ;
-; Logic element usage by number of LUT inputs ;                     ;
-;     -- 4 input functions                    ; 39                  ;
-;     -- 3 input functions                    ; 3                   ;
-;     -- <=2 input functions                  ; 163                 ;
-;                                             ;                     ;
-; Logic elements by mode                      ;                     ;
-;     -- normal mode                          ; 84                  ;
-;     -- arithmetic mode                      ; 121                 ;
-;                                             ;                     ;
-; Total registers                             ; 118                 ;
-;     -- Dedicated logic registers            ; 118                 ;
-;     -- I/O registers                        ; 0                   ;
-;                                             ;                     ;
-; I/O pins                                    ; 21                  ;
-;                                             ;                     ;
-; Embedded Multiplier 9-bit elements          ; 0                   ;
-;                                             ;                     ;
-; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
-; Maximum fan-out                             ; 118                 ;
-; Total fan-out                               ; 754                 ;
-; Average fan-out                             ; 2.07                ;
-+---------------------------------------------+---------------------+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                         ;
++---------------------------------------------+---------------------------------------+
+; Resource                                    ; Usage                                 ;
++---------------------------------------------+---------------------------------------+
+; Estimated Total logic elements              ; 100                                   ;
+;                                             ;                                       ;
+; Total combinational functions               ; 100                                   ;
+; Logic element usage by number of LUT inputs ;                                       ;
+;     -- 4 input functions                    ; 31                                    ;
+;     -- 3 input functions                    ; 14                                    ;
+;     -- <=2 input functions                  ; 55                                    ;
+;                                             ;                                       ;
+; Logic elements by mode                      ;                                       ;
+;     -- normal mode                          ; 48                                    ;
+;     -- arithmetic mode                      ; 52                                    ;
+;                                             ;                                       ;
+; Total registers                             ; 33                                    ;
+;     -- Dedicated logic registers            ; 33                                    ;
+;     -- I/O registers                        ; 0                                     ;
+;                                             ;                                       ;
+; I/O pins                                    ; 21                                    ;
+;                                             ;                                       ;
+; Embedded Multiplier 9-bit elements          ; 0                                     ;
+;                                             ;                                       ;
+; Maximum fan-out node                        ; LED_blinker:blinker_ins0|LessThan0~45 ;
+; Maximum fan-out                             ; 33                                    ;
+; Total fan-out                               ; 401                                   ;
+; Average fan-out                             ; 2.29                                  ;
++---------------------------------------------+---------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -214,33 +213,10 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                 ; Entity Name ; Library Name ;
 +-------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------+-------------+--------------+
-; |top_level                    ; 205 (0)             ; 118 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 21   ; 0            ; 0          ; |top_level                          ; top_level   ; work         ;
-;    |LED_blinker:blinker_ins0| ; 205 (205)           ; 118 (118)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|LED_blinker:blinker_ins0 ; LED_blinker ; work         ;
+; |top_level                    ; 100 (0)             ; 33 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 21   ; 0            ; 0          ; |top_level                          ; top_level   ; work         ;
+;    |LED_blinker:blinker_ins0| ; 100 (100)           ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|LED_blinker:blinker_ins0 ; LED_blinker ; work         ;
 +-------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+--------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                               ;
-+------------------------------------------+-------------------------------------------------------+
-; Register name                            ; Reason for Removal                                    ;
-+------------------------------------------+-------------------------------------------------------+
-; LED_blinker:blinker_ins0|r_count_10hz[0] ; Merged with LED_blinker:blinker_ins0|r_count_100hz[0] ;
-; LED_blinker:blinker_ins0|r_count_50hz[0] ; Merged with LED_blinker:blinker_ins0|r_count_100hz[0] ;
-; LED_blinker:blinker_ins0|r_count_1hz[0]  ; Merged with LED_blinker:blinker_ins0|r_count_100hz[0] ;
-; LED_blinker:blinker_ins0|r_count_50hz[1] ; Merged with LED_blinker:blinker_ins0|r_count_100hz[1] ;
-; LED_blinker:blinker_ins0|r_count_1hz[1]  ; Merged with LED_blinker:blinker_ins0|r_count_10hz[1]  ;
-; LED_blinker:blinker_ins0|r_count_10hz[1] ; Merged with LED_blinker:blinker_ins0|r_count_100hz[1] ;
-; LED_blinker:blinker_ins0|r_count_50hz[2] ; Merged with LED_blinker:blinker_ins0|r_count_100hz[2] ;
-; LED_blinker:blinker_ins0|r_count_1hz[2]  ; Merged with LED_blinker:blinker_ins0|r_count_10hz[2]  ;
-; LED_blinker:blinker_ins0|r_count_10hz[2] ; Merged with LED_blinker:blinker_ins0|r_count_100hz[2] ;
-; LED_blinker:blinker_ins0|r_count_50hz[3] ; Merged with LED_blinker:blinker_ins0|r_count_100hz[3] ;
-; LED_blinker:blinker_ins0|r_count_1hz[3]  ; Merged with LED_blinker:blinker_ins0|r_count_10hz[3]  ;
-; LED_blinker:blinker_ins0|r_count_10hz[3] ; Merged with LED_blinker:blinker_ins0|r_count_100hz[3] ;
-; LED_blinker:blinker_ins0|r_count_1hz[4]  ; Merged with LED_blinker:blinker_ins0|r_count_10hz[4]  ;
-; LED_blinker:blinker_ins0|r_count_10hz[4] ; Merged with LED_blinker:blinker_ins0|r_count_50hz[4]  ;
-; Total Number of Removed Registers = 14   ;                                                       ;
-+------------------------------------------+-------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -248,8 +224,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 118   ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 33    ;
+; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -260,14 +236,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 +-----------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: LED_blinker:blinker_ins0 ;
-+-------------------+----------+----------------------------------------+
-; Parameter Name    ; Value    ; Type                                   ;
-+-------------------+----------+----------------------------------------+
-; c_max_count_100Hz ; 250000   ; Signed Integer                         ;
-; c_max_count_50Hz  ; 500000   ; Signed Integer                         ;
-; c_max_count_10Hz  ; 2500000  ; Signed Integer                         ;
-; c_max_count_1Hz   ; 25000000 ; Signed Integer                         ;
-+-------------------+----------+----------------------------------------+
++------------------+----------+-----------------------------------------+
+; Parameter Name   ; Value    ; Type                                    ;
++------------------+----------+-----------------------------------------+
+; c_max_count_1Hz  ; 25000000 ; Signed Integer                          ;
+; c_max_count_5Hz  ; 10000000 ; Signed Integer                          ;
+; c_max_count_10Hz ; 5000000  ; Signed Integer                          ;
+; c_max_count_20Hz ; 2500000  ; Signed Integer                          ;
++------------------+----------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -277,19 +253,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 21                          ;
-; cycloneiii_ff         ; 118                         ;
-;     plain             ; 118                         ;
-; cycloneiii_lcell_comb ; 205                         ;
-;     arith             ; 121                         ;
-;         2 data inputs ; 118                         ;
+; cycloneiii_ff         ; 33                          ;
+;     SCLR              ; 32                          ;
+;     plain             ; 1                           ;
+; cycloneiii_lcell_comb ; 100                         ;
+;     arith             ; 52                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 40                          ;
+;         3 data inputs ; 11                          ;
+;     normal            ; 48                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 12                          ;
 ;         3 data inputs ; 3                           ;
-;     normal            ; 84                          ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 41                          ;
-;         4 data inputs ; 39                          ;
+;         4 data inputs ; 31                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.84                        ;
+; Max LUT depth         ; 10.50                       ;
+; Average LUT depth     ; 6.90                        ;
 +-----------------------+-----------------------------+
 
 
@@ -308,37 +288,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Wed Dec 29 22:18:12 2021
+    Info: Processing started: Sat Jan  8 00:37:45 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LED_blinker -c LED_blinker
-Info (125069): Default assignment values were changed in the current version of the Quartus Prime software -- changes to default assignments values are contained in file c:/intelfpga_lite/21.1/quartus/bin64/assignment_defaults.qdf
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file de10_lite_golden_top.v
-    Info (12023): Found entity 1: DE10_LITE_Golden_Top File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/DE10_LITE_Golden_Top.v Line: 29
 Info (12021): Found 1 design units, including 1 entities, in source file led_blinker.v
-    Info (12023): Found entity 1: LED_blinker File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/LED_blinker.v Line: 6
+    Info (12023): Found entity 1: LED_blinker File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/LED_blinker.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file top_level.v
     Info (12023): Found entity 1: top_level File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 1
 Info (12127): Elaborating entity "top_level" for the top level hierarchy
-Info (12128): Elaborating entity "LED_blinker" for hierarchy "LED_blinker:blinker_ins0" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 21
+Info (12128): Elaborating entity "LED_blinker" for hierarchy "LED_blinker:blinker_ins0" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 17
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 7 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 9
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 9
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 9
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 9
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 9
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 9
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 9
-Info (21057): Implemented 226 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 4
+Info (21057): Implemented 121 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 205 logic cells
+    Info (21061): Implemented 100 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4838 megabytes
-    Info: Processing ended: Wed Dec 29 22:18:18 2021
+    Info: Peak virtual memory: 4846 megabytes
+    Info: Processing ended: Sat Jan  8 00:37:51 2022
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:13
 

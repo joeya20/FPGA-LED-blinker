@@ -1,98 +1,44 @@
-/*
-Design HDL code that will blink LEDs at a specified frequency of 100 Hz, 50 Hz, 10 Hz, or 1 Hz. 
-For each of the blink frequencies, the LED will be set to 50% duty cycle (it will be on half the time). 
-The LED frequency will be chosen via two switches which are inputs to the FPGA. 
-There is an additional switch that needs to be ‘1’ to turn on the LED. The FPGA will be driven by a 50MHz clock.
-*/
 
-module LED_blinker 
+module LED_blinker
+	#(
+		//max counts to get proper blinking rate with a 50% duty cycle (clk = 50MHz)
+		//max count = clk / blinking rate * 0.5 
+		parameter c_max_count_1Hz = 25_000_000,
+		parameter c_max_count_5Hz = 10_000_000,
+		parameter c_max_count_10Hz = 5_000_000,
+		parameter c_max_count_20Hz = 2_500_000
+	)
 	(
-		i_clk,
-		i_enable,
-		i_select0,
-		i_select1,
-		o_led
+		input 	i_clk,
+		input 	i_enable,
+		input 	i_select0,
+		input 	i_select1,
+		output 	o_led
 	);
+
+	//counter
+	reg [31:0] r_count = 0;
+
+	//LED toggle signal
+	reg r_toggle = 1'b0;
 	
-	//port declarations
-	input i_clk;
-	input i_enable;
-	input i_select0;
-	input	i_select1;
-	output o_led;
-
-	//max counts to get proper blinking rate with a 50% duty cycle 
-	//(clk / blinking rate * 0.5)
-	parameter c_max_count_100Hz = 250_000;
-	parameter c_max_count_50Hz = 500_000;
-	parameter c_max_count_10Hz = 2_500_000;
-	parameter c_max_count_1Hz = 25_000_000;
-
-	//counters
-	reg [31:0] r_count_100hz = 0;
-	reg [31:0] r_count_50hz = 0;
-	reg [31:0] r_count_10hz = 0;
-	reg [31:0] r_count_1hz = 0;
-
-	//LED toggle signals
-	reg r_toggle_100Hz = 1'b0;
-	reg r_toggle_50Hz = 1'b0;
-	reg r_toggle_10Hz = 1'b0;
-	reg r_toggle_1Hz = 1'b0;
-
-	//final LED state output
-	wire w_LED_state;
-
-	//4 parallel processes for each blinking rate
+	//current frequency max count
+	wire [31:0] r_current_max_count;
+	
 	always @ (posedge i_clk)
+	begin		
+		//increment counter; toggle LED and roll over if max count is reached
+		if(r_count >= r_current_max_count-1)	//need >= condition for case where freq is toggled down
 		begin
-			if(r_count_100hz == c_max_count_100Hz-1)
-				begin
-					r_toggle_100Hz <= !r_toggle_100Hz;
-					r_count_100hz <= 0;
-				end
-			else
-				r_count_100hz <= r_count_100hz + 1;
+			r_toggle <= !r_toggle;
+			r_count <= 0;
 		end
-
-		
-	always @ (posedge i_clk)
-		begin
-			if(r_count_50hz == c_max_count_50Hz-1)
-				begin
-					r_toggle_50Hz <= !r_toggle_50Hz;
-					r_count_50hz <= 0;
-				end
-			else
-				r_count_50hz <= r_count_50hz + 1;
-		end
-
-		
-	always @ (posedge i_clk)
-		begin
-			if(r_count_10hz == c_max_count_10Hz-1)
-				begin
-					r_toggle_10Hz <= !r_toggle_10Hz;
-					r_count_10hz <= 0;
-				end
-			else
-				r_count_10hz <= r_count_10hz + 1;
-		end
-
-		
-	always @ (posedge i_clk)
-		begin
-			if(r_count_1hz == c_max_count_1Hz-1)
-				begin
-					r_toggle_1Hz <= !r_toggle_1Hz;
-					r_count_1hz <= 0;
-				end
-			else
-				r_count_1hz <= r_count_1hz + 1;
-		end
-
-	assign w_LED_state = i_select0 ? (i_select1 ? r_toggle_1Hz : r_toggle_10Hz) : (i_select1 ? r_toggle_50Hz : r_toggle_100Hz);
-		
-	assign o_led = w_LED_state & i_enable;
+		else
+			r_count <= r_count + 1;
+	end
+	
+	assign r_current_max_count = i_select1 ? (i_select0 ? c_max_count_20Hz : c_max_count_10Hz) : (i_select0 ? c_max_count_5Hz : c_max_count_1Hz);
+	
+	assign o_led = r_toggle & i_enable;
 
 endmodule

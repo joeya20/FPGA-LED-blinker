@@ -1,14 +1,14 @@
-Fitter Status : Successful - Wed Dec 29 22:18:25 2021
+Fitter Status : Successful - Sat Jan  8 00:37:58 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : LED_blinker
 Top-level Entity Name : top_level
 Family : MAX 10
 Device : 10M50DAF484C6GES
 Timing Models : Preliminary
-Total logic elements : 206 / 49,760 ( < 1 % )
-    Total combinational functions : 206 / 49,760 ( < 1 % )
-    Dedicated logic registers : 118 / 49,760 ( < 1 % )
-Total registers : 118
+Total logic elements : 101 / 49,760 ( < 1 % )
+    Total combinational functions : 101 / 49,760 ( < 1 % )
+    Dedicated logic registers : 33 / 49,760 ( < 1 % )
+Total registers : 33
 Total pins : 21 / 360 ( 6 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )

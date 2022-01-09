@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Windows/system32
+vLED_blinker
+Z0 !s110 1641765555
+!i10b 1
+!s100 in_m2Dn2:U@mI^ec]RFI43
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+INGBj;]Rn941]5XL:Gk>T[1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker
+w1641757544
+8C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/LED_blinker.v
+FC:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/LED_blinker.v
+!i122 26
+L0 2 43
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1641765554.000000
+!s107 C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/LED_blinker.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/LED_blinker.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+n@l@e@d_blinker
+vLED_blinker_tb
+R0
+!i10b 1
+!s100 S=3RnVPNK=_62=F8C]oNK3
+R1
+I^hS]dEPR2UC5:6GOm^X@P0
+R2
+R3
+w1641765549
+8C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/LED_blinker_tb.v
+FC:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/LED_blinker_tb.v
+!i122 27
+L0 1 61
+R4
+r1
+!s85 0
+31
+!s108 1641765555.000000
+!s107 C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/LED_blinker_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/LED_blinker_tb.v|
+!i113 1
+R5
+R6
+n@l@e@d_blinker_tb

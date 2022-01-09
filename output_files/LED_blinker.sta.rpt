@@ -1,5 +1,5 @@
 Timing Analyzer report for LED_blinker
-Wed Dec 29 22:18:31 2021
+Sat Jan  8 00:38:03 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -92,12 +92,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.17        ;
+; Average used               ; 1.13        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   1.1%      ;
+;     Processors 2-16        ;   0.9%      ;
 +----------------------------+-------------+
 
 
@@ -110,13 +110,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Fmax Summary                                                                           ;
-+------------+-----------------+---------------+---------------------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name    ; Note                                                          ;
-+------------+-----------------+---------------+---------------------------------------------------------------+
-; 279.33 MHz ; 250.0 MHz       ; MAX10_CLK1_50 ; limit due to minimum period restriction (max I/O toggle rate) ;
-+------------+-----------------+---------------+---------------------------------------------------------------+
++-----------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                  ;
++------------+-----------------+---------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name    ; Note ;
++------------+-----------------+---------------+------+
+; 195.92 MHz ; 195.92 MHz      ; MAX10_CLK1_50 ;      ;
++------------+-----------------+---------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -125,7 +125,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------+--------+---------------+
 ; Clock         ; Slack  ; End Point TNS ;
 +---------------+--------+---------------+
-; MAX10_CLK1_50 ; -2.580 ; -218.535      ;
+; MAX10_CLK1_50 ; -4.104 ; -128.120      ;
 +---------------+--------+---------------+
 
 
@@ -134,7 +134,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------+-------+---------------+
 ; Clock         ; Slack ; End Point TNS ;
 +---------------+-------+---------------+
-; MAX10_CLK1_50 ; 0.314 ; 0.000         ;
+; MAX10_CLK1_50 ; 0.315 ; 0.000         ;
 +---------------+-------+---------------+
 
 
@@ -155,7 +155,7 @@ No paths to report.
 +---------------+--------+--------------------------+
 ; Clock         ; Slack  ; End Point TNS            ;
 +---------------+--------+--------------------------+
-; MAX10_CLK1_50 ; -3.000 ; -147.196                 ;
+; MAX10_CLK1_50 ; -3.000 ; -43.326                  ;
 +---------------+--------+--------------------------+
 
 
@@ -165,13 +165,13 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+--------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                                                                            ;
-+------------+-----------------+---------------+---------------------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name    ; Note                                                          ;
-+------------+-----------------+---------------+---------------------------------------------------------------+
-; 307.13 MHz ; 250.0 MHz       ; MAX10_CLK1_50 ; limit due to minimum period restriction (max I/O toggle rate) ;
-+------------+-----------------+---------------+---------------------------------------------------------------+
++-----------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                   ;
++------------+-----------------+---------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name    ; Note ;
++------------+-----------------+---------------+------+
+; 213.68 MHz ; 213.68 MHz      ; MAX10_CLK1_50 ;      ;
++------------+-----------------+---------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -180,7 +180,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------+--------+---------------+
 ; Clock         ; Slack  ; End Point TNS ;
 +---------------+--------+---------------+
-; MAX10_CLK1_50 ; -2.256 ; -186.196      ;
+; MAX10_CLK1_50 ; -3.680 ; -114.760      ;
 +---------------+--------+---------------+
 
 
@@ -189,7 +189,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------+-------+---------------+
 ; Clock         ; Slack ; End Point TNS ;
 +---------------+-------+---------------+
-; MAX10_CLK1_50 ; 0.284 ; 0.000         ;
+; MAX10_CLK1_50 ; 0.285 ; 0.000         ;
 +---------------+-------+---------------+
 
 
@@ -210,7 +210,7 @@ No paths to report.
 +---------------+--------+-------------------------+
 ; Clock         ; Slack  ; End Point TNS           ;
 +---------------+--------+-------------------------+
-; MAX10_CLK1_50 ; -3.000 ; -147.196                ;
+; MAX10_CLK1_50 ; -3.000 ; -43.326                 ;
 +---------------+--------+-------------------------+
 
 
@@ -225,7 +225,7 @@ No synchronizer chains to report.
 +---------------+--------+---------------+
 ; Clock         ; Slack  ; End Point TNS ;
 +---------------+--------+---------------+
-; MAX10_CLK1_50 ; -0.740 ; -46.464       ;
+; MAX10_CLK1_50 ; -1.408 ; -43.010       ;
 +---------------+--------+---------------+
 
 
@@ -255,7 +255,7 @@ No paths to report.
 +---------------+--------+-------------------------+
 ; Clock         ; Slack  ; End Point TNS           ;
 +---------------+--------+-------------------------+
-; MAX10_CLK1_50 ; -3.000 ; -141.907                ;
+; MAX10_CLK1_50 ; -3.000 ; -42.268                 ;
 +---------------+--------+-------------------------+
 
 
@@ -270,10 +270,10 @@ No synchronizer chains to report.
 +------------------+----------+-------+----------+---------+---------------------+
 ; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -2.580   ; 0.144 ; N/A      ; N/A     ; -3.000              ;
-;  MAX10_CLK1_50   ; -2.580   ; 0.144 ; N/A      ; N/A     ; -3.000              ;
-; Design-wide TNS  ; -218.535 ; 0.0   ; 0.0      ; 0.0     ; -147.196            ;
-;  MAX10_CLK1_50   ; -218.535 ; 0.000 ; N/A      ; N/A     ; -147.196            ;
+; Worst-case Slack ; -4.104   ; 0.144 ; N/A      ; N/A     ; -3.000              ;
+;  MAX10_CLK1_50   ; -4.104   ; 0.144 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -128.12  ; 0.0   ; 0.0      ; 0.0     ; -43.326             ;
+;  MAX10_CLK1_50   ; -128.120 ; 0.000 ; N/A      ; N/A     ; -43.326             ;
 +------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -384,7 +384,7 @@ No synchronizer chains to report.
 +---------------+---------------+----------+----------+----------+----------+
 ; From Clock    ; To Clock      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------+---------------+----------+----------+----------+----------+
-; MAX10_CLK1_50 ; MAX10_CLK1_50 ; 3292     ; 0        ; 0        ; 0        ;
+; MAX10_CLK1_50 ; MAX10_CLK1_50 ; 3004     ; 0        ; 0        ; 0        ;
 +---------------+---------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -394,7 +394,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------+---------------+----------+----------+----------+----------+
 ; From Clock    ; To Clock      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------+---------------+----------+----------+----------+----------+
-; MAX10_CLK1_50 ; MAX10_CLK1_50 ; 3292     ; 0        ; 0        ; 0        ;
+; MAX10_CLK1_50 ; MAX10_CLK1_50 ; 3004     ; 0        ; 0        ; 0        ;
 +---------------+---------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -419,9 +419,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 3     ; 3    ;
-; Unconstrained Input Port Paths  ; 30    ; 30   ;
+; Unconstrained Input Port Paths  ; 76    ; 76   ;
 ; Unconstrained Output Ports      ; 10    ; 10   ;
-; Unconstrained Output Port Paths ; 70    ; 70   ;
+; Unconstrained Output Port Paths ; 20    ; 20   ;
 +---------------------------------+-------+------+
 
 
@@ -498,7 +498,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Wed Dec 29 22:18:29 2021
+    Info: Processing started: Sat Jan  8 00:38:02 2022
 Info: Command: quartus_sta LED_blinker -c LED_blinker
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -515,47 +515,47 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -2.580
+Info (332146): Worst-case setup slack is -4.104
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.580            -218.535 MAX10_CLK1_50 
-Info (332146): Worst-case hold slack is 0.314
+    Info (332119):    -4.104            -128.120 MAX10_CLK1_50 
+Info (332146): Worst-case hold slack is 0.315
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.314               0.000 MAX10_CLK1_50 
+    Info (332119):     0.315               0.000 MAX10_CLK1_50 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000            -147.196 MAX10_CLK1_50 
+    Info (332119):    -3.000             -43.326 MAX10_CLK1_50 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 10M50DAF484C6GES are preliminary
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -2.256
+Info (332146): Worst-case setup slack is -3.680
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.256            -186.196 MAX10_CLK1_50 
-Info (332146): Worst-case hold slack is 0.284
+    Info (332119):    -3.680            -114.760 MAX10_CLK1_50 
+Info (332146): Worst-case hold slack is 0.285
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.284               0.000 MAX10_CLK1_50 
+    Info (332119):     0.285               0.000 MAX10_CLK1_50 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000            -147.196 MAX10_CLK1_50 
+    Info (332119):    -3.000             -43.326 MAX10_CLK1_50 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -0.740
+Info (332146): Worst-case setup slack is -1.408
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.740             -46.464 MAX10_CLK1_50 
+    Info (332119):    -1.408             -43.010 MAX10_CLK1_50 
 Info (332146): Worst-case hold slack is 0.144
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -565,13 +565,13 @@ Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000            -141.907 MAX10_CLK1_50 
+    Info (332119):    -3.000             -42.268 MAX10_CLK1_50 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4922 megabytes
-    Info: Processing ended: Wed Dec 29 22:18:31 2021
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4921 megabytes
+    Info: Processing ended: Sat Jan  8 00:38:03 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 
