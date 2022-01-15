@@ -5,7 +5,7 @@ module top_level
 		output 	[9:0] LEDR
 	);
 
-	wire r_led_state;
+	wire w_led_state;
 
 	LED_blinker blinker_ins0
 		(
@@ -13,9 +13,9 @@ module top_level
 			.i_enable	(SW[2]),
 			.i_select0	(SW[0]),
 			.i_select1	(SW[1]),
-			.o_led		(r_led_state)
+			.o_led		(w_led_state)
 		);
 		
-	assign LEDR = {10{r_led_state}};
+	assign LEDR = {10{w_led_state}};
 	
 endmodule
