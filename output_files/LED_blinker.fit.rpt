@@ -1,5 +1,5 @@
 Fitter report for LED_blinker
-Sat Jan  8 00:37:58 2022
+Fri Jan 14 20:28:21 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sat Jan  8 00:37:58 2022       ;
+; Fitter Status                      ; Successful - Fri Jan 14 20:28:21 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; LED_blinker                                 ;
 ; Top-level Entity Name              ; top_level                                   ;
@@ -1855,7 +1855,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.18 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.19 seconds.
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 10M50DAF484C6GES are preliminary
 Info (334004): Delay annotation completed successfully
@@ -1878,9 +1878,9 @@ Warning (169177): 11 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 
     Info (169178): Pin MAX10_CLK1_50 uses I/O standard 3.3-V LVTTL at P11 File: C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/top_level.v Line: 3
 Info (144001): Generated suppressed messages file C:/Users/JoeyD/Documents/GitHub/FPGA-LED-blinker/output_files/LED_blinker.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 173 warnings
-    Info: Peak virtual memory: 6558 megabytes
-    Info: Processing ended: Sat Jan  8 00:37:58 2022
-    Info: Elapsed time: 00:00:06
+    Info: Peak virtual memory: 6550 megabytes
+    Info: Processing ended: Fri Jan 14 20:28:21 2022
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:10
 
 

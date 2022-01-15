@@ -23,10 +23,9 @@ module LED_blinker
 	reg r_toggle = 1'b0;
 	
 	//current frequency max count
-	wire [31:0] r_current_max_count;
+	reg [31:0] r_current_max_count;
 	
-	always @ (posedge i_clk)
-	begin		
+	always @ (posedge i_clk) begin		
 		//increment counter and toggle LED and roll over if max count is reached
 		if(r_count < r_current_max_count-1) begin
 			r_count <= r_count + 1;
@@ -36,7 +35,14 @@ module LED_blinker
 		end
 	end
 	
-	assign r_current_max_count = i_select1 ? (i_select0 ? c_max_count_20Hz : c_max_count_10Hz) : (i_select0 ? c_max_count_5Hz : c_max_count_1Hz);
+	always @ (i_select0 or i_select1) begin
+		case({i_select1, i_select0})
+			2'b00 : r_current_max_count = c_max_count_1Hz;
+			2'b01 : r_current_max_count = c_max_count_5Hz;
+			2'b10 : r_current_max_count = c_max_count_10Hz;
+			2'b11 : r_current_max_count = c_max_count_20Hz;
+		endcase
+	end
 	
 	assign o_led = r_toggle & i_enable;
 
