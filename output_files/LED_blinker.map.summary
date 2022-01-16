@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Fri Jan 14 21:37:11 2022
+Analysis & Synthesis Status : Successful - Sat Jan 15 21:31:09 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : LED_blinker
 Top-level Entity Name : top_level
 Family : MAX 10
-Total logic elements : 100
-    Total combinational functions : 100
-    Dedicated logic registers : 33
-Total registers : 33
+Total logic elements : 109
+    Total combinational functions : 103
+    Dedicated logic registers : 39
+Total registers : 39
 Total pins : 21
 Total virtual pins : 0
 Total memory bits : 0

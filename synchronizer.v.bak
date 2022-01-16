@@ -1,0 +1,27 @@
+module synchronizer 
+#(
+	c_N = 1
+)
+(
+	input 				clk,
+	input					reset,
+	input		[c_N-1:0]	D,
+	output	[c_N-1:0]	Q
+);
+
+	reg [c_N-1:0] reg1;
+	reg [c_N-1:0] reg2;
+	
+	always @ (posedge clk or posedge reset) begin
+		if (reset == 1) begin
+			reg1 <= 0;
+			reg2 <= 0;
+		end else begin
+			reg1	<= D;
+			reg2	<= reg1;
+		end
+	end
+	
+	assign Q = reg2;
+	
+endmodule

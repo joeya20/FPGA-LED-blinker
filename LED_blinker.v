@@ -25,6 +25,7 @@ module LED_blinker
 	//current frequency max count
 	wire [31:0] w_current_max_count;
 	
+	
 	always @ (posedge i_clk) begin		
 		//increment counter and toggle LED and roll over if max count is reached
 		if(r_count < w_current_max_count-1) begin

@@ -6,13 +6,24 @@ module top_level
 	);
 
 	wire w_led_state;
+	
+	wire [2:0] w_clean_sw;
+	
+	synchronizer #(.c_N(3))
+		switch_synchronizer
+		(
+			.i_clk(MAX10_CLK1_50),
+			.i_reset(1'b0),
+			.i_D(SW[2:0]),
+			.o_Q(w_clean_sw)
+		);
 
 	LED_blinker blinker_ins0
 		(
 			.i_clk		(MAX10_CLK1_50),
-			.i_enable	(SW[2]),
-			.i_select0	(SW[0]),
-			.i_select1	(SW[1]),
+			.i_enable	(w_clean_sw[2]),
+			.i_select0	(w_clean_sw[0]),
+			.i_select1	(w_clean_sw[1]),
 			.o_led		(w_led_state)
 		);
 		

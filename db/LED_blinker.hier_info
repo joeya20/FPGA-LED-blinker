@@ -1,5 +1,5 @@
 |top_level
-MAX10_CLK1_50 => MAX10_CLK1_50.IN1
+MAX10_CLK1_50 => MAX10_CLK1_50.IN2
 SW[0] => SW[0].IN1
 SW[1] => SW[1].IN1
 SW[2] => SW[2].IN1
@@ -10,16 +10,37 @@ SW[6] => ~NO_FANOUT~
 SW[7] => ~NO_FANOUT~
 SW[8] => ~NO_FANOUT~
 SW[9] => ~NO_FANOUT~
-LEDR[0] << LED_blinker:blinker_ins0.o_led
-LEDR[1] << LED_blinker:blinker_ins0.o_led
-LEDR[2] << LED_blinker:blinker_ins0.o_led
-LEDR[3] << LED_blinker:blinker_ins0.o_led
-LEDR[4] << LED_blinker:blinker_ins0.o_led
-LEDR[5] << LED_blinker:blinker_ins0.o_led
-LEDR[6] << LED_blinker:blinker_ins0.o_led
-LEDR[7] << LED_blinker:blinker_ins0.o_led
-LEDR[8] << LED_blinker:blinker_ins0.o_led
-LEDR[9] << LED_blinker:blinker_ins0.o_led
+LEDR[0] <= LED_blinker:blinker_ins0.o_led
+LEDR[1] <= LED_blinker:blinker_ins0.o_led
+LEDR[2] <= LED_blinker:blinker_ins0.o_led
+LEDR[3] <= LED_blinker:blinker_ins0.o_led
+LEDR[4] <= LED_blinker:blinker_ins0.o_led
+LEDR[5] <= LED_blinker:blinker_ins0.o_led
+LEDR[6] <= LED_blinker:blinker_ins0.o_led
+LEDR[7] <= LED_blinker:blinker_ins0.o_led
+LEDR[8] <= LED_blinker:blinker_ins0.o_led
+LEDR[9] <= LED_blinker:blinker_ins0.o_led
+
+
+|top_level|synchronizer:switch_synchronizer
+i_clk => reg2[0].CLK
+i_clk => reg2[1].CLK
+i_clk => reg2[2].CLK
+i_clk => reg1[0].CLK
+i_clk => reg1[1].CLK
+i_clk => reg1[2].CLK
+i_reset => reg2[0].ACLR
+i_reset => reg2[1].ACLR
+i_reset => reg2[2].ACLR
+i_reset => reg1[0].ACLR
+i_reset => reg1[1].ACLR
+i_reset => reg1[2].ACLR
+i_D[0] => reg1[0].DATAIN
+i_D[1] => reg1[1].DATAIN
+i_D[2] => reg1[2].DATAIN
+o_Q[0] <= reg2[0].DB_MAX_OUTPUT_PORT_TYPE
+o_Q[1] <= reg2[1].DB_MAX_OUTPUT_PORT_TYPE
+o_Q[2] <= reg2[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top_level|LED_blinker:blinker_ins0
